@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "eton",
-    "host": "127.0.0.1",
+    "username": "etonadmin",
+    "password": "rladldla",
+    "database": "eton_project",
+    "host": "projecteton.c5qgmqgo5qf1.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "eton",
-    "host": "127.0.0.1",
+    "username": "etonadmin",
+    "password": "rladldla",
+    "database": "eton_project",
+    "host": "projecteton.c5qgmqgo5qf1.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "eton",
-    "host": "127.0.0.1",
+    "username": "etonadmin",
+    "password": "rladldla",
+    "database": "eton_project",
+    "host": "projecteton.c5qgmqgo5qf1.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
