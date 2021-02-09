@@ -52,12 +52,12 @@ async function callback(req, res, next) {
     console.log(githubData.data);
     console.log("****************************");
 
-    const { login, avatar_url } = githubData.data;
+    const { login } = githubData.data;
+    console.log(`login: ${login}`);
     let exUser = await users.findOne({ where: { username: login } });
     if (!exUser) {
       exUser = await users.create({
         username: login,
-        picture: avatar_url,
       });
     }
     const accessToken = generateAccessToken(exUser.dataValues);
