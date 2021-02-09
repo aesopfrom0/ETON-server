@@ -35,16 +35,18 @@ async function callback(req, res, next) {
         console.log(`1: ${err}`);
       });
 
-    // console.log("====================");
-    // console.log(githubToken);
-    // console.log("====================");
+    console.log("====================");
+    console.log(githubToken);
+    console.log("====================");
 
-    const githubData = await axios.get("https://api.github.com/user", {
-      headers: {
-        authorization: `token ${githubToken.access_token}`,
-        accept: "application/json",
-      },
-    });
+    const githubData = await axios
+      .get("https://api.github.com/user", {
+        headers: {
+          authorization: `token ${githubToken.access_token}`,
+          accept: "application/json",
+        },
+      })
+      .catch((e) => console.log(`line 47: ${e}`));
 
     console.log("****************************");
     console.log(githubData.data);
@@ -61,7 +63,7 @@ async function callback(req, res, next) {
     const accessToken = generateAccessToken(exUser.dataValues);
     sendAccessToken(res, accessToken);
   } catch (e) {
-    next(e);
+    console.log(`line 64: ${e}`);
   }
 }
 
