@@ -5,16 +5,16 @@ require("dotenv").config();
 const client_id = process.env.GITHUB_CLIENT_ID;
 const client_secret = process.env.GITHUB_CLIENT_SECRET;
 const axios = require("axios");
-const {
-  generateAccessToken,
-  generateRefreshToken,
-  sendAccessToken,
-  sendRefreshToken,
-} = require("../tokenFunctions");
+const { generateAccessToken, sendAccessToken } = require("../tokenFunctions");
 
-async function callback(req, res, next) {
+async function callback(req, res) {
   try {
     const code = req.body.authorizationCode;
+
+    console.log("====================");
+    console.log(code);
+    console.log("====================");
+
     const githubToken = await axios
       .post(
         "https://github.com/login/oauth/access_token",
